@@ -17,7 +17,7 @@ export class GeoipService {
     this._openDBConnection();
   }
 
-  private async _openDBConnection() {
+  private _openDBConnection = async () => {
     try {
 
       // Open city database file asynchronously
