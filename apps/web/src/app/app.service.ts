@@ -11,7 +11,7 @@ export const appService: AppService = {
     /**
      * Returns information about the specified IP addresses.
      * Get information for each IP address from the cache if it exists.
-     * If an IP address is not cached, retrieve its information from the remote service
+     * If an IP address is not cached, retrieve its information from the remote service.
      *
      * @param ipAddresses - An array of IP addresses for which to retrieve information.
      */
@@ -32,9 +32,11 @@ export const appService: AppService = {
             // Invoke itself to retrieve all cached data and sort it based on the main IP list.
             return this.getIPAddressesInfo(ipAddresses);
         } catch (err) {
+
             throw new Error(`Oops, something went wrong! 
          We're sorry, but there was an error processing your request.
         Please try again later or contact support if the problem persists.`);
+
         }
     }
 };

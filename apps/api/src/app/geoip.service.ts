@@ -20,11 +20,15 @@ export class GeoipService {
   private async _openDBConnection() {
     if (!this._reader) {
       try {
+
         // Open city database file asynchronously
         this._reader = await Reader.open(DB_PATH, { watchForUpdates: true }); // for `watchForUpdates` option @see https://github.com/runk/node-maxmind#options
+
       } catch (err) {
+
         throw new ServiceUnavailableException('Failed to connect to database',
-          { cause: new Error(), description: err.message })
+          { cause: new Error(), description: err.message });
+
       }
     }
   }
@@ -36,9 +40,12 @@ export class GeoipService {
    */
   async lookupIPAddresses({ ipAddresses }: LookupDto): Promise<IPInfo[]> {
     try {
+
       // Return information about each IP address
       return ipAddresses.map(this._getCityInfo);
+
     } catch (err) {
+
       throw new BadRequestException('Invalid request data. Please provide a valid IP address or range of IP addresses',
         { cause: new Error(), description: err.message });
     }
@@ -65,15 +72,16 @@ export class GeoipService {
           ['Postal Code', postal?.code],
           ['City Name', city?.names?.en],
           ['Time Zone', location?.timeZone],
-          ['Accuracy Radius', location?.accuracyRadius.toString()]
+          ['Accuracy Radius', location?.accuracyRadius?.toString()]
         ]
       };
 
     } catch (err) {
+
       return {
         ip: ipAddress,
         error: err.message // return invalid ip error message
-      }
+      };
     }
   }
 }
