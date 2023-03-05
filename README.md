@@ -10,7 +10,7 @@ The project is built using Nest.js (Node.js, Express.js), and React.
 
  The project is created using the Nx workspace, it generates a folder structure that looks something like this:
 
-max-mind/
+ max-mind/
 ├── apps/
 │   ├── api          # The back-end api server
 │   ├── web          # The front-end web ui
@@ -29,7 +29,7 @@ max-mind/
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/myusername/myproject.git`
+1. Clone the repository: `git clone git@bitbucket.org:ibzoor/ip-lookup-max-mind.git`
 2. Install the dependencies: `npm install`
 3. Nx CLI: Nx is a set of command-line tools that you can use to create, develop, and test your project. You can install it globally using npm by running the following command: npm install -g nx.
 
