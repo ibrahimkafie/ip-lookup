@@ -23,12 +23,14 @@ export const appService: AppService = {
         }
 
         try {
+            // Fetch IP list data from the server
             const data = await fetchIPAddresses(nonCachedIPs);
+
+            // Cache the new IP list data
             setCachedIPsData(data);
 
-            const result = data.concat(cachedIPs);
-
-            return sortBasedOnArray(result, ipAddresses);
+            // Invoke itself to retrieve all cached data and sort it based on the main IP list.
+            return this.getIPAddressesInfo(ipAddresses);
         } catch (err) {
             throw new Error(`Oops, something went wrong! 
          We're sorry, but there was an error processing your request.

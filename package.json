@@ -5,7 +5,14 @@
   "scripts": {
     "start": "concurrently \"npm run api\" \"npm run web\"",
     "api": "npx nx run api:serve",
-    "web": "npx nx run web:serve"
+    "web": "npx nx run web:serve",
+    "lint": "npx nx run-many --target=lint --all",
+    "test": "npx nx run-many --target=test --all",
+    "build": "npx nx run-many --target=build --all",
+    "lint:affected": "npx nx affected:lint --parallel --uncommitted",
+    "test:affected": "npx nx affected --target=test --parallel=4",
+    "build:affected": "npx nx affected --target=build",
+    "all": "npx nx affected --targets=lint,test,build"
   },
   "private": true,
   "dependencies": {
