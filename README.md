@@ -10,17 +10,17 @@ The project is built using Nest.js (Node.js, Express.js), and React.
 
  The project is created using the Nx workspace, it generates a folder structure that looks something like this:
 
- max-mind/
-├── apps/
-│   ├── api          # The back-end api server
-│   ├── web          # The front-end web ui
-├── db/              # GeoLite2-City database
-├── libs/
-│   ├── core          # The core code between api and web apps
-├── tools/
-├── nx.json
-├── package.json
-└── tsconfig.base.json
+    .ip-lookup-max-mind/
+    ├── apps/
+    │   ├── api          # The back-end api server
+    │   ├── web          # The front-end web ui
+    ├── db/              # GeoLite2-City database
+    ├── libs/
+    │   ├── core          # The core code between api and web apps
+    ├── tools/
+    ├── nx.json
+    ├── package.json
+    └── tsconfig.base.json
 
 ## Requirements
 
