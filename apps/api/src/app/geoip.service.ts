@@ -18,18 +18,16 @@ export class GeoipService {
   }
 
   private async _openDBConnection() {
-    if (!this._reader) {
-      try {
+    try {
 
-        // Open city database file asynchronously
-        this._reader = await Reader.open(DB_PATH, { watchForUpdates: true }); // for `watchForUpdates` option @see https://github.com/runk/node-maxmind#options
+      // Open city database file asynchronously
+      this._reader = await Reader.open(DB_PATH, { watchForUpdates: true, watchForUpdatesHook: this._openDBConnection }); // for `watchForUpdates` option @see https://github.com/runk/node-maxmind#options
 
-      } catch (err) {
+    } catch (err) {
 
-        throw new ServiceUnavailableException('Failed to connect to database',
-          { cause: new Error(), description: err.message });
+      throw new ServiceUnavailableException('Failed to connect to database',
+        { cause: new Error(), description: err.message });
 
-      }
     }
   }
 
