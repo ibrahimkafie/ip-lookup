@@ -16,7 +16,7 @@ The project is built using Nest.js (Node.js, Express.js), and React.
     │   ├── web          # The front-end web ui
     ├── db/              # GeoLite2-City database
     ├── libs/
-    │   ├── core          # The core code between api and web apps
+    │   ├── core         # The core code between api and web apps
     ├── tools/
     ├── nx.json
     ├── package.json
