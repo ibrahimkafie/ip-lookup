@@ -2,7 +2,7 @@
 
 ## Overview
 
-The IP Addresses Lookup Project is a web application that allows users to look up information about a given IP addresses. The application uses the `@maxmind/geoip2-node` API to retrieve city data for the IP addresses and displays it on the UI.
+The IP Addresses Lookup Project is a web application that allows users to look up information about a given IP addresses. The application uses the `@maxmind/geoip2-node` package to retrieve city data for the IP addresses and displays it on the UI.
 
 The project is built using Nest.js (Node.js, Express.js), and React.
 
