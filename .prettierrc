@@ -1,3 +1,11 @@
 {
-  "singleQuote": true
+  "printWidth": 100,
+  "max-line-length": [
+    true,
+    {
+      "limit": 100
+    }
+  ],
+  "singleQuote": true,
+  "tabWidth": 2
 }
