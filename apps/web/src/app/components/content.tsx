@@ -1,4 +1,7 @@
 type Props = {
+  /**
+   * The child components to render within the wrapper
+   */
   children: React.ReactNode;
 };
 

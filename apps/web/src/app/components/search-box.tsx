@@ -6,7 +6,16 @@ import { useState } from 'react';
 import Typography from '@mui/material/Typography';
 
 type Props = {
+  /**
+   * Callback function that performs the IP lookup for a given list of IP addresses.
+   * @param ipList - An array of IP addresses to look up
+   */
   lookup: (ipList: string[]) => void;
+
+  /**
+   * Callback function that is called when an error occurs during the IP lookup.
+   * @param message - A string describing the error that occurred
+   */
   onError: (message: string) => void;
 };
 
@@ -29,6 +38,7 @@ export const SearchBox = ({ lookup, onError }: Props) => {
       return;
     }
 
+    // validate ip list format
     const isIPsValid = validateIPAddresses(ipList);
 
     if (isIPsValid) {
@@ -57,7 +67,6 @@ export const SearchBox = ({ lookup, onError }: Props) => {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
-    onError('');
   };
 
   return (

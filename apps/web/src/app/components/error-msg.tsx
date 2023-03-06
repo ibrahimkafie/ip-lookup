@@ -1,8 +1,12 @@
 import Alert from '@mui/material/Alert';
 
 type Props = {
+  /**
+   * The error message to display.
+   */
   message: string | undefined;
 };
+
 export const ErrorMsg = ({ message }: Props) => {
   if (message) {
     return (

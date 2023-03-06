@@ -8,10 +8,13 @@ import Paper from '@mui/material/Paper';
 import TableBody from '@mui/material/TableBody';
 
 type Props = {
+  /**
+   * The IP info object to display in the item.
+   */
   item: IPInfo;
 };
 
-export const IpInfo = ({ item }: Props) => {
+export const IpItem = ({ item }: Props) => {
   return (
     <TableContainer component={Paper} className="my-4">
       <Table size="small">
@@ -42,4 +45,4 @@ export const IpInfo = ({ item }: Props) => {
   );
 };
 
-export default IpInfo;
+export default IpItem;

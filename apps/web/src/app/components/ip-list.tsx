@@ -1,27 +1,38 @@
 import { IPInfo } from '@max-mind/core/models';
 import Divider from '@mui/material/Divider';
-import IpInfo from './ip-info';
+import IpItem from './ip-item';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import ToggleButton from '@mui/material/ToggleButton';
 import { useState } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 
+type DisplayMode = 'items' | 'json';
+
 type Props = {
+  /**
+   * An array of IPInfo objects to display in the list.
+   */
   items: IPInfo[] | undefined;
+
+  /**
+   * A boolean value indicating whether the component is currently loading data.
+   */
   loading: boolean | undefined;
 };
 
-export const ResultItems = ({ items, loading }: Props) => {
-  const [mode, setMode] = useState('items');
+export const IpList = ({ items, loading }: Props) => {
+  const [mode, setMode] = useState<DisplayMode>('items');
 
-  const handleDisplayMode = (event: React.MouseEvent<HTMLElement>, value: string) => {
+  const handleDisplayMode = (event: React.MouseEvent<HTMLElement>, value: DisplayMode) => {
     setMode(value);
   };
 
+  // Loading state
   if (loading) {
     return <CircularProgress size={120} thickness={2} className="mt-20" />;
   }
 
+  // Display IP list result
   if (items) {
     return (
       <div className="w-full !mt-10">
@@ -39,7 +50,7 @@ export const ResultItems = ({ items, loading }: Props) => {
         <Divider>IP Lookup Result</Divider>
 
         {mode === 'items' ? (
-          items.map((item, i) => <IpInfo key={i} item={item} />)
+          items.map((item, i) => <IpItem key={i} item={item} />)
         ) : (
           <pre>{JSON.stringify(items, null, 2)}</pre>
         )}
@@ -47,7 +58,8 @@ export const ResultItems = ({ items, loading }: Props) => {
     );
   }
 
+  // Display IP svg image
   return <img className="opacity-[0.03] fixed top-96" src="/ip-address.svg" alt="Ip Address" />;
 };
 
-export default ResultItems;
+export default IpList;
