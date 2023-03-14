@@ -72,8 +72,7 @@ export const SearchBox = ({ lookup, onError }: Props) => {
   return (
     <>
       <Paper component="form" className="flex w-full py-2 px-3 box-border my-4">
-        <InputBase
-          sx={{ ml: 1, flex: 1 }}
+        <InputBase className="ml-2 flex-1"
           placeholder="Enter one or more IP addresses"
           inputProps={{ 'aria-label': 'IP addresses' }}
           onChange={handleChange}

@@ -6,7 +6,7 @@ import ToggleButton from '@mui/material/ToggleButton';
 import { useState } from 'react';
 import CircularProgress from '@mui/material/CircularProgress';
 
-type DisplayMode = 'items' | 'json';
+type DisplayMode = 'view' | 'json';
 
 type Props = {
   /**
@@ -21,7 +21,7 @@ type Props = {
 };
 
 export const IpList = ({ items, loading }: Props) => {
-  const [mode, setMode] = useState<DisplayMode>('items');
+  const [mode, setMode] = useState<DisplayMode>('view');
 
   const handleDisplayMode = (event: React.MouseEvent<HTMLElement>, value: DisplayMode) => {
     setMode(value);
@@ -43,13 +43,13 @@ export const IpList = ({ items, loading }: Props) => {
           exclusive
           onChange={handleDisplayMode}
         >
-          <ToggleButton value="items">VIEW</ToggleButton>
+          <ToggleButton value="view">VIEW</ToggleButton>
           <ToggleButton value="json">JSON</ToggleButton>
         </ToggleButtonGroup>
 
         <Divider>IP Lookup Result</Divider>
 
-        {mode === 'items' ? (
+        {mode === 'view' ? (
           items.map((item, i) => <IpItem key={i} item={item} />)
         ) : (
           <pre>{JSON.stringify(items, null, 2)}</pre>
