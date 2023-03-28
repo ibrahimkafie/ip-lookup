@@ -1,4 +1,4 @@
-# IP Addresses Look up
+# IP Addresses Look Up
 
 ## Overview
 
