@@ -1,4 +1,4 @@
-# MaxMind IP Addresses Look up
+# IP Addresses Look up
 
 ## Overview
 
@@ -10,7 +10,7 @@ The project is built using Nest.js (Node.js, Express.js), and React.
 
  The project is created using the Nx workspace, it generates a folder structure that looks something like this:
 
-    .ip-lookup-max-mind/
+    .ip-lookup/
     ├── apps/
     │   ├── api          # The back-end api server
     │   ├── web          # The front-end web ui
@@ -29,7 +29,7 @@ The project is built using Nest.js (Node.js, Express.js), and React.
 
 ## Installation
 
-1. Clone the repository: `git clone git@bitbucket.org:ibzoor/ip-lookup-max-mind.git`
+1. Clone the repository: `git clone https://github.com/ibrahimkafie/ip-lookup.git`
 2. Install the dependencies: `npm install`
 3. Install nx globally `npm install -g nx` to invoke the command directly using nx, or you can use npx to run the script without installing nx globally, assuming it has already been added to the script's dependencies
 
