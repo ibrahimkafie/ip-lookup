@@ -2,7 +2,7 @@ import { BadRequestException, Injectable, ServiceUnavailableException } from '@n
 import { Reader, ReaderModel } from '@maxmind/geoip2-node';
 import path from 'path';
 import { LookupDto } from './dto/lookup.dto';
-import { IPInfo } from '@max-mind/core/models';
+import { IPInfo } from '@ip-lookup/core/models';
 
 // path to the database file
 const DB_PATH = path.resolve(__dirname, process.env.DATABASE_PATH ?? '');

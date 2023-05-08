@@ -1,6 +1,6 @@
-import { IPInfo } from '@max-mind/core/models';
-import { fetchIPAddresses } from './api';
-import { getCachedIPsData, setCachedIPsData, sortBasedOnArray } from './utils';
+import { IPInfo } from '@ip-lookup/core/models';
+import { fetchIPAddresses } from '../api';
+import { getCachedIPsData, setCachedIPsData, sortBasedOnArray } from '../utils';
 
 interface AppService {
     getIPAddressesInfo(ipAddresses: string[]): Promise<IPInfo[]>;

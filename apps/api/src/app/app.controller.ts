@@ -3,7 +3,7 @@ import { ApiOperation } from '@nestjs/swagger';
 
 import { GeoipService } from './geoip.service';
 import { LookupDto } from './dto/lookup.dto';
-import { IPInfo } from '@max-mind/core/models';
+import { IPInfo } from '@ip-lookup/core/models';
 
 @Controller('lookup')
 export class AppController {

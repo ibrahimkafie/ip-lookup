@@ -1,4 +1,4 @@
-import { IPInfo } from '@max-mind/core/models';
+import { IPInfo } from '@ip-lookup/core/models';
 import Divider from '@mui/material/Divider';
 import IpItem from './ip-item';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';

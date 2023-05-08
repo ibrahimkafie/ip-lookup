@@ -1,4 +1,4 @@
-import { IPInfo } from '@max-mind/core/models';
+import { IPInfo } from '@ip-lookup/core/models';
 import Table from '@mui/material/Table';
 import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';

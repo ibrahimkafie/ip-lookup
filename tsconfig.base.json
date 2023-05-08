@@ -17,7 +17,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@max-mind/core/*": ["libs/core/src/*"]
+      "@ip-lookup/core/*": ["libs/core/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

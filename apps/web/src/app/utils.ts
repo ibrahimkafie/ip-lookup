@@ -1,4 +1,4 @@
-import { IPInfo } from "@max-mind/core/models";
+import { IPInfo } from "@ip-lookup/core/models";
 
 export interface IPCacheData {
     cachedIPs: IPInfo[];
