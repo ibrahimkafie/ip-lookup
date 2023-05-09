@@ -1,13 +1,12 @@
 import { IPInfo } from '@ip-lookup/core/models';
-import { fetchIPAddresses } from '../api';
-import { getCachedIPsData, setCachedIPsData, sortBasedOnArray } from '../utils';
+import { fetchIPsAddresses } from '../api';
+import { getCachedIPsData, setCachedIPsData } from '../utils';
 
-interface AppService {
+interface LookupService {
     getIPAddressesInfo(ipAddresses: string[]): Promise<IPInfo[]>;
 }
 
-// Define the public functions of the app service
-export const appService: AppService = {
+export const lookupService: LookupService = {
     /**
      * Returns information about the specified IP addresses.
      * Get information for each IP address from the cache if it exists.
@@ -19,12 +18,12 @@ export const appService: AppService = {
         const { cachedIPs, nonCachedIPs } = getCachedIPsData(ipAddresses);
 
         if (!nonCachedIPs.length) {
-            return sortBasedOnArray(cachedIPs, ipAddresses);
+            return cachedIPs;
         }
 
         try {
-            // Fetch IP list data from the server
-            const data = await fetchIPAddresses(nonCachedIPs);
+            // Fetch IPs list data from the server
+            const data = await fetchIPsAddresses(nonCachedIPs);
 
             // Cache the new IP list data
             setCachedIPsData(data);

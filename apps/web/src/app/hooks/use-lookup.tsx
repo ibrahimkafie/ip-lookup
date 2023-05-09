@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { appService } from '../services';
+import { lookupService } from '../services';
 import { IPInfo } from '@ip-lookup/core/models';
 
-interface AppState {
+interface LookupState {
   /**
    * An array of IPInfo objects representing the current list of IP addresses and their associated information.
    */
@@ -20,7 +20,7 @@ interface AppState {
 }
 
 export function useLookup() {
-  const [state, setState] = useState<AppState>({});
+  const [state, setState] = useState<LookupState>({});
 
   const handleLookup = async (ipList: string[]) => {
     try {
@@ -31,7 +31,7 @@ export function useLookup() {
       setState({ loading: true, error: undefined, ipItemsInfo: undefined });
 
       // get IP addresses info
-      const result = await appService.getIPAddressesInfo(ipList);
+      const result = await lookupService.getIPAddressesInfo(ipList);
 
       // update state with result
       setState({ error: undefined, loading: false, ipItemsInfo: result });

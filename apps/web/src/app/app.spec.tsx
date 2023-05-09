@@ -10,6 +10,6 @@ describe('App', () => {
 
   it('should have a header as the title', () => {
     const { getByText } = render(<App />);
-    expect(getByText(/MAXMIND/gi)).toBeTruthy();
+    expect(getByText(/IP-Lookup/gi)).toBeTruthy();
   });
 });

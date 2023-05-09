@@ -1,6 +1,6 @@
 type ContentProps = {
   /**
-   * The child components to render within the wrapper
+   * The children components to render within the wrapper
    */
   children: React.ReactNode;
 };

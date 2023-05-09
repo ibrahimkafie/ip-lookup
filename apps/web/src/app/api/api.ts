@@ -1,10 +1,10 @@
 import { IPInfo } from "@ip-lookup/core/models";
 
 /**
- * Fetch IP addresses
+ * Fetch IPs addresses
  * @param body - An array of IP addresses for which to retrieve information.
  */
-export const fetchIPAddresses = async (body: string[]): Promise<IPInfo[]> => {
+export const fetchIPsAddresses = async (body: string[]): Promise<IPInfo[]> => {
     const response = await fetch('/api/lookup', {
         method: 'POST',
         headers: {
